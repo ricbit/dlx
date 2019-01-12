@@ -8,7 +8,7 @@ cover_% : cover_%.cc
 perf.%.txt : cover_%
 	echo "python genqueens.py 9 | ./$^" > script.sh
 	chmod u+x script.sh
-	perf stat -d --repeat 10 ./script.sh &> $@
+	perf stat -d --repeat 3 ./script.sh &> $@
 	rm script.sh
 
 cachegrind.%.txt : cover_%
