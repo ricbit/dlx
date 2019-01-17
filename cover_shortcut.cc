@@ -316,7 +316,7 @@ class ExactCover {
       const vector<vector<string>>& options) {
     int total_nodes = 2 + items.size();
     for (const auto& option : options) {
-      total_nodes += 1 + option.size();
+      total_nodes += option.size();
     }
     return total_nodes;
   }
