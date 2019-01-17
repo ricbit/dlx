@@ -120,8 +120,8 @@ class ExactCover {
     graph.graph(header, nodes);
   }
 
-  int run() {
-    int count = 0;
+  long run() {
+    long count = 0;
     int p, i, value;
   //d1:
     int l = 0;

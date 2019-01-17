@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <set>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -127,26 +128,27 @@ class ExactCover {
     graph.graph(header, nodes);
   }
 
-  int run() {
-    return solve(0);
+  long run() {
+    count = 0;
+    solve(0);
+    return count;
   }
 
  private:
-  int solve(int level) {
+  void solve(int level) {
     if (header[0].rlink == 0) {
-      return 1;
+      count++;
+      return;
     }
-    int count = 0;
     int item = best_item();
     cover(item);
     solution[level].option = nodes[item].dlink;
     for (auto& option = solution[level].option; option != item; option = nodes[option].dlink) {
       try_option(option, solution[level]);
-      count += solve(level + 1);
+      solve(level + 1);
       rewind_option(option, solution[level]);
     }
     uncover(item);
-    return count;
   }
 
   int best_item() {
@@ -348,6 +350,7 @@ class ExactCover {
   const vector<string>& names;
   vector<Solution> solution;
   Graph graph;
+  long count;
 };
 
 vector<string> parse_line(const string& line) {

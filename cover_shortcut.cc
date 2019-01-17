@@ -8,8 +8,9 @@
 
 using namespace std;
 
+constexpr bool DEBUG = false;
+
 struct Header {
-  string name;
   int llink;
   int rlink;
 };
@@ -20,11 +21,18 @@ struct Node {
   int dlink;
 };
 
+struct Solution {
+  int option;
+  int left;
+  int right;
+};
+
 class Graph {
  public:
-  Graph(const vector<Header>& header, const vector<Node>& nodes)
-      : last_header(begin(header), end(header)), 
-        last_nodes(begin(nodes), end(nodes)), frame(0) {
+  Graph(const vector<Header>& header, const vector<Node>& nodes, const vector<string>& names)
+      : last_header(begin(header), end(header)),
+        last_nodes(begin(nodes), end(nodes)),
+        names(names), frame(0) {
   }
 
   void graph(const vector<Header>& header, const vector<Node>& nodes) {
@@ -40,9 +48,9 @@ class Graph {
     for (int i = 0; i < int(nodes.size()); i++) {
       ofs << "n" << i << " [label=\"";
       if (i >= 1 && i < int(header.size())) {
-        ofs << header[i].name << " ";
-      } else if (i >= int(header.size()) && nodes[i].top > 0) {
-        ofs << header[nodes[i].top].name << " ";
+        ofs << names[i] << " ";
+      } else if (i >= int(header.size()) && abs(nodes[i].top) > 0) {
+        ofs << names[abs(nodes[i].top)] << " ";
       }
       ofs << "(" << i << ")\" ";
       ofs << "shape=\"box\" ";
@@ -51,7 +59,7 @@ class Graph {
       } else if (nodes[i].top <= 0) {
         ofs << "pos=\"0,-" << ++option << "!\" ";
       } else {
-        ofs << "pos=\"" << nodes[i].top << ",-" << option << "!\" ";
+        ofs << "pos=\"" << abs(nodes[i].top) << ",-" << option << "!\" ";
       }
       ofs << "] ;\n";
     }
@@ -81,6 +89,7 @@ class Graph {
   }
   vector<Header> last_header;
   vector<Node> last_nodes;
+  const vector<string>& names;
   int frame;
 };
 
@@ -90,7 +99,8 @@ class ExactCover {
       const vector<string>& items,
       const vector<vector<string>>& options)
       : header(build_header(items)), nodes(build_nodes(items, options)),
-        solution(options.size()), graph(header, nodes) {
+        names(items), solution(options.size()),
+        hist(options.size(), 0), graph(header, nodes, items) {
   }
 
   void print() {
@@ -103,7 +113,7 @@ class ExactCover {
     };
     for (int j = 0; j <= int(header.size()) / 8; j++) {
       print_line(j, header.size(), [&](int i) { return i; });
-      print_line(j, header.size(), [&](int i) { return header[i].name; });
+      print_line(j, header.size(), [&](int i) { return i ? names[i - 1] : ""; });
       print_line(j, header.size(), [&](int i) { return header[i].llink; });
       print_line(j, header.size(), [&](int i) { return header[i].rlink; });
     }
@@ -121,69 +131,158 @@ class ExactCover {
   }
 
   long run() {
-    long count = 0;
-    int p, i;
-  //d1:
-    int l = 0;
-  d2:
-    if (header[0].rlink == 0) {
-      count++;
-      goto d8;
-    }
-  //d3:
-    i = header[0].rlink;
-  //d4:
-    cover(i);
-    solution[l] = nodes[i].dlink;
-  d5:
-    if (solution[l] == i) {
-      goto d7;
-    }
-    p = solution[l] + 1;
-    while (p != solution[l]) {
-      int j = nodes[p].top;
-      if (j <= 0) {
-        p = nodes[p].ulink;
-      } else {
-        cover(j);
-        p++;
+    count = 0;
+    active = header.size() - 1;
+    solve(0);
+    if (DEBUG) {
+      for (int i = 0; i < int(hist.size()) - 1; i++) {
+        if (hist[i] > 0) {
+          cout << "hist "<< i << " = " << hist[i] << "\n";
+        }
       }
     }
-    l++;
-    goto d2;
-  d6:
-    p = solution[l] - 1;
-    while (p != solution[l]) {
-      int j = nodes[p].top;
-      if (j <= 0) {
-        p = nodes[p].dlink;
-      } else {
-        uncover(j);
-        p--;
-      }
-    }
-    i = nodes[solution[l]].top;
-    solution[l] = nodes[solution[l]].dlink;
-    goto d5;
-  d7:
-    uncover(i);
-  d8:
-    if (l == 0) {
-      return count;
-    }
-    l--;
-    if (nodes[solution[l]].top == 0) {
-      goto d5;
-    }
-    goto d6;
+    return count;
   }
 
  private:
-   void dump_current() {
+  void solve(int level) {
+    if (header[0].rlink == 0) {
+      count++;
+      return;
+    }
+    int item = best_item();
+    cover(item);
+    solution[level].option = nodes[item].dlink;
+    for (auto& option = solution[level].option; option != item; option = nodes[option].dlink) {
+      try_option(option, solution[level]);
+      if (active == 1) {
+        int size = nodes[header[0].rlink].top;
+        count += size;
+        if (DEBUG) {
+          hist[size]++;
+        }
+      } else {
+        solve(level + 1);
+      }
+      rewind_option(option, solution[level]);
+    }
+    uncover(item);
+  }
+
+  int best_item() {
+    int best = header[0].rlink;
+    int value = nodes[best].top;
+    for (int p = header[best].rlink; p != 0; p = header[p].rlink) {
+      if (nodes[p].top < value) {
+        best = p;
+        value = nodes[p].top;
+        if (value == 0) {
+          break;
+        }
+      }
+    }
+    return best;
+  }
+
+  template<typename T, typename P, typename Q>
+  void option_right_edges(int option, T action, P action_right, Q action_left) {
+    auto p = option + 1;
+    if (nodes[option].top > 0) {
+      do {
+        action(p);
+      } while (nodes[p++].top > 0);
+      action_right(p - 1);
+    } else {
+      action_right(option);
+    }
+
+    for (p = option - 1; nodes[p].top > 0; p--) {
+      action(p);
+    }
+    action_left(p + 1);
+  }
+
+  template<typename T>
+  void option_right(int option, T action) {
+    auto dummy = [](int x){};
+    option_right_edges(option, action, dummy, dummy);
+  }
+
+  template<typename T>
+  void option_left(int option, const Solution& sol, T action) {
+    for (auto p = sol.left; p != option; p++) {
+      action(p);
+    }
+    for (auto p = sol.right; p != option; p--) {
+      action(p);
+    }
+  }
+
+  void try_option(int option, Solution& sol) {
+    option_right_edges(option, [&](int p) {
+      cover(abs(nodes[p].top));
+    }, [&sol](int right) {
+      sol.right = right;
+    }, [&sol](int left) {
+      sol.left = left;
+    });
+  }
+
+  void rewind_option(int option, const Solution& sol) {
+    option_left(option, sol, [&](int p) {
+      uncover(abs(nodes[p].top));
+    });
+  }
+
+  void cover(int i) {
+    active--;
+    for (auto p = nodes[i].dlink; p != i; p = nodes[p].dlink) {
+      hide(p);
+    }
+    auto l = header[i].llink;
+    auto r = header[i].rlink;
+    header[l].rlink = r;
+    header[r].llink = l;
+  }
+
+  void uncover(int i) {
+    active++;
+    auto l = header[i].llink;
+    auto r = header[i].rlink;
+    header[l].rlink = i;
+    header[r].llink = i;
+    for (auto p = nodes[i].ulink; p != i; p = nodes[p].ulink) {
+      unhide(p);
+    }
+  }
+
+  void hide(int p) {
+    option_right(p, [&](int q) {
+      auto x = abs(nodes[q].top);
+      auto u = nodes[q].ulink;
+      auto d = nodes[q].dlink;
+      nodes[u].dlink = d;
+      nodes[d].ulink = u;
+      nodes[x].top--;
+    });
+  }
+
+  void unhide(int p) {
+    option_right(p, [&](int q) {
+      auto x = abs(nodes[q].top);
+      auto u = nodes[q].ulink;
+      auto d = nodes[q].dlink;
+      nodes[u].dlink = q;
+      nodes[d].ulink = q;
+      nodes[x].top++;
+    });
+  }
+
+  void dump_current() {
     cout << "items remaining: ";
     for (int t = 0; header[t].rlink != 0;) {
       t = header[t].rlink;
-      cout << header[t].name << " ";
+      cout << names[t] << " ";
     }
     cout << "\n";
     cout << "options remaining:\n";
@@ -191,24 +290,24 @@ class ExactCover {
     for (int p = header[0].rlink; p != 0; p = header[p].rlink) {
       for (int i = nodes[p].dlink; i != p; i = nodes[i].dlink) {
         int j = i;
-        for (; nodes[j].top > 0; j--);
+        for (; abs(nodes[j].top) > 0; j--);
         options.insert(j + 1);
       }
     }
     for (auto option : options) {
-      for (int p = option; nodes[p].top > 0; p++) {
-        cout << header[nodes[p].top].name << " ";
+      for (int p = option; abs(nodes[p].top) > 0; p++) {
+        cout << names[abs(nodes[p].top)] << " ";
       }
       cout << "\n";
     }
   }
 
   void dump_option(int p) {
-    while (nodes[p].top > 0) {
+    while (abs(nodes[p].top) > 0) {
       p--;
     }
-    for (p = p + 1; nodes[p].top > 0; p++) {
-      cout << header[nodes[p].top].name << " ";
+    for (p = p + 1; abs(nodes[p].top) > 0; p++) {
+      cout << names[abs(nodes[p].top)] << " ";
     }
   }
 
@@ -228,9 +327,9 @@ class ExactCover {
     int size = items.size();
     for (int i = 0; i <= size; i++) {
       if (i == 0) {
-        header[i] = { "", size, 1 };
+        header[i] = { size, 1 };
       } else {
-        header[i] = { items[i - 1], i - 1, (i + 1) % (size + 1) };
+        header[i] = { i - 1, (i + 1) % (size + 1) };
       }
     }
     return header;
@@ -248,15 +347,8 @@ class ExactCover {
       name[items[i - 1]] = i;
     }
     int current = items.size() + 1;
-    int lastspacer = -2;
-    int spacer = current;
+    nodes[current++] = { 0, 0, 0 };
     for (int i = 0; i < int(options.size()); i++) {
-      spacer = current;
-      nodes[spacer].top = -i;
-      nodes[spacer].ulink = lastspacer + 1;
-      nodes[spacer].dlink = spacer + options[i].size();
-      lastspacer = spacer;
-      current++;
       for (int j = 0; j < int(options[i].size()); j++) {
         int item = name[options[i][j]];
         nodes[item].top++;
@@ -268,69 +360,19 @@ class ExactCover {
         last[item] = current;
         current++;
       }
+      nodes[current - 1].top *= -1;
     }
-    nodes[current].top = -int(options.size());
-    nodes[current].ulink = lastspacer + 1;
-    nodes[current].dlink = -1;
     return nodes;
-  }
-
-  void cover(int i) {
-    for (auto p = nodes[i].dlink; p != i; p = nodes[p].dlink) {
-      hide(p);
-    }
-    auto l = header[i].llink;
-    auto r = header[i].rlink;
-    header[l].rlink = r;
-    header[r].llink = l;
-  }
-
-  void uncover(int i) {
-    auto l = header[i].llink;
-    auto r = header[i].rlink;
-    header[l].rlink = i;
-    header[r].llink = i;
-    for (auto p = nodes[i].ulink; p != i; p = nodes[p].ulink) {
-      unhide(p);
-    }
-  }
-
-  void hide(int p) {
-    for (auto q = p + 1; q != p;) {
-      auto x = nodes[q].top;
-      auto u = nodes[q].ulink;
-      auto d = nodes[q].dlink;
-      if (x <= 0) {
-        q = u;
-      } else {
-        nodes[u].dlink = d;
-        nodes[d].ulink = u;
-        nodes[x].top--;
-        q++;
-      }
-    }
-  }
-
-  void unhide(int p) {
-    for (auto q = p - 1; q != p;) {
-      auto x = nodes[q].top;
-      auto u = nodes[q].ulink;
-      auto d = nodes[q].dlink;
-      if (x <= 0) {
-        q = d;
-      } else {
-        nodes[u].dlink = q;
-        nodes[d].ulink = q;
-        nodes[x].top++;
-        q--;
-      }
-    }
   }
 
   vector<Header> header;
   vector<Node> nodes;
-  vector<int> solution;
+  const vector<string>& names;
+  vector<Solution> solution;
+  vector<int> hist;
   Graph graph;
+  int active;
+  long count;
 };
 
 vector<string> parse_line(const string& line) {

@@ -1,12 +1,18 @@
 SHELL := /bin/bash
 
-all : cover_refactor cover_nospacer cover_original cover_mrv
+all : cover_refactor cover_nospacer cover_original cover_mrv cover_shortcut
 
 cover_% : cover_%.cc
-	g++ -std=c++17 -Wall -O3 -march=native -malign-data=cacheline -g $^ -o $@
+	g++ -std=c++17 -Wall -O3 -march=native -g $^ -o $@
 
-perf.%.txt : cover_%
+perf.queens.%.txt : cover_%
 	echo "python genqueens.py 9 | ./$^" > script.sh
+	chmod u+x script.sh
+	perf stat -d --repeat 3 ./script.sh &> $@
+	rm script.sh
+
+perf.random.%.txt : cover_%
+	echo "./$^ < random.dlx" > script.sh
 	chmod u+x script.sh
 	perf stat -d --repeat 3 ./script.sh &> $@
 	rm script.sh

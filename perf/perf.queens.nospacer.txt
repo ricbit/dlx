@@ -1,0 +1,21 @@
+Number of solutions: 127733760
+Number of solutions: 127733760
+Number of solutions: 127733760
+
+ Performance counter stats for './script.sh' (3 runs):
+
+     163210.325639      task-clock (msec)         #    1.000 CPUs utilized            ( +-  1.23% )
+               315      context-switches          #    0.002 K/sec                    ( +- 83.35% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+             1,161      page-faults               #    0.007 K/sec                    ( +-  0.03% )
+   541,872,634,472      cycles                    #    3.320 GHz                      ( +-  0.04% )  (50.00%)
+ 1,602,723,313,088      instructions              #    2.96  insn per cycle           ( +-  0.01% )  (62.50%)
+   158,189,741,248      branches                  #  969.239 M/sec                    ( +-  0.01% )  (62.50%)
+       597,128,327      branch-misses             #    0.38% of all branches          ( +-  0.22% )  (62.50%)
+   442,106,865,407      L1-dcache-loads           # 2708.817 M/sec                    ( +-  0.00% )  (62.50%)
+        72,341,798      L1-dcache-load-misses     #    0.02% of all L1-dcache hits    ( +-  8.33% )  (62.50%)
+         3,612,262      LLC-loads                 #    0.022 M/sec                    ( +- 25.31% )  (50.00%)
+         1,033,143      LLC-load-misses           #   28.60% of all LL-cache hits     ( +- 37.99% )  (50.00%)
+
+            163.21 +- 2.01 seconds time elapsed  ( +-  1.23% )
+

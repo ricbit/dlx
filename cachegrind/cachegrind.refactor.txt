@@ -15,299 +15,299 @@ Auto-annotation:  on
 --------------------------------------------------------------------------------
             Ir  I1mr  ILmr             Dr   D1mr  DLmr            Dw   D1mw  DLmw            Bc         Bcm      Bi    Bim 
 --------------------------------------------------------------------------------
-48,014,204,375 5,682 1,972 10,195,892,593 55,702 8,107 4,016,274,633 35,630 4,586 6,052,267,993 698,472,387 145,334 29,949  PROGRAM TOTALS
+47,919,869,696 5,680 1,966 10,166,981,109 56,173 8,114 3,995,995,208 36,070 4,586 6,052,267,973 689,726,439 145,315 31,221  PROGRAM TOTALS
 
 --------------------------------------------------------------------------------
             Ir  I1mr ILmr             Dr   D1mr  DLmr            Dw   D1mw DLmw            Bc         Bcm      Bi    Bim  file:function
 --------------------------------------------------------------------------------
-40,306,262,304    14   13 10,173,341,700 36,305     0 3,986,274,878 29,410    0 6,051,219,501 698,442,464       0      0  /home/ricbit/work/dlx/cover_refactor.cc:ExactCover::solve(int)
- 7,700,559,087     3    3     20,279,315      0     0    28,911,371      0    0             0           0       0      0  /usr/include/c++/8/bits/stl_vector.h:ExactCover::solve(int)
+40,211,927,996    13   12 10,144,430,330 36,668     0 3,965,995,563 28,656    0 6,051,219,501 689,696,517       0      0  /home/ricbit/work/dlx/cover_refactor.cc:ExactCover::solve(int)
+ 7,700,559,087     4    4     20,279,315    116     0    28,911,371  1,198    0             0           0       0      0  /usr/include/c++/8/bits/stl_vector.h:ExactCover::solve(int)
 
 --------------------------------------------------------------------------------
 -- Auto-annotated source: /usr/include/c++/8/bits/stl_vector.h
 --------------------------------------------------------------------------------
-           Ir I1mr ILmr         Dr D1mr DLmr         Dw D1mw DLmw    Bc Bcm Bi Bim 
+           Ir I1mr ILmr         Dr D1mr DLmr         Dw  D1mw DLmw    Bc Bcm Bi Bim 
 
 -- line 88 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .        struct _Vector_impl
-            .    .    .          .    .    .          .    .    .     .   .  .   .        : public _Tp_alloc_type
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	pointer _M_start;
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	pointer _M_finish;
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	pointer _M_end_of_storage;
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	_Vector_impl()
-        1,635    1    1          0    0    0      1,635    0    0     0   0  0   0  	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	{ }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
-        1,644    3    3          0    0    0      1,644  205  202     0   0  0   0  	: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	{ }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #if __cplusplus >= 201103L
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	_Vector_impl(_Tp_alloc_type&& __a) noexcept
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	: _Tp_alloc_type(std::move(__a)),
-        4,092    1    1          0    0    0      3,069  376  376     0   0  0   0  	  _M_start(), _M_finish(), _M_end_of_storage()
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	{ }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #endif
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	void _M_swap_data(_Vector_impl& __x) _GLIBCXX_NOEXCEPT
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	{
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  std::swap(_M_start, __x._M_start);
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  std::swap(_M_finish, __x._M_finish);
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  std::swap(_M_end_of_storage, __x._M_end_of_storage);
+            .    .    .          .    .    .          .     .    .     .   .  .   .        struct _Vector_impl
+            .    .    .          .    .    .          .     .    .     .   .  .   .        : public _Tp_alloc_type
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	pointer _M_start;
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	pointer _M_finish;
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	pointer _M_end_of_storage;
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	_Vector_impl()
+        1,635    1    1          0    0    0      1,635     0    0     0   0  0   0  	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	{ }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+        1,644    2    2          0    0    0      1,644   205  202     0   0  0   0  	: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	{ }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #if __cplusplus >= 201103L
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	_Vector_impl(_Tp_alloc_type&& __a) noexcept
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	: _Tp_alloc_type(std::move(__a)),
+        4,092    0    0          0    0    0      3,069   376  376     0   0  0   0  	  _M_start(), _M_finish(), _M_end_of_storage()
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	{ }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #endif
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	void _M_swap_data(_Vector_impl& __x) _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	{
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  std::swap(_M_start, __x._M_start);
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  std::swap(_M_finish, __x._M_finish);
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  std::swap(_M_end_of_storage, __x._M_end_of_storage);
 -- line 114 ----------------------------------------
 -- line 288 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .      public:
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _Vector_impl _M_impl;
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        pointer
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_allocate(size_t __n)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
-        7,854    3    3          0    0    0         10    0    0 2,101   0  0   0  	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_deallocate(pointer __p, size_t __n)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
-        8,429    3    3         12    0    0          0    0    0 4,214  14  0   0  	if (__p)
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  _Tr::deallocate(_M_impl, __p, __n);
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .      private:
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_create_storage(size_t __n)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-        1,100    1    1        554    0    0        546    0    0     0   0  0   0  	this->_M_impl._M_start = this->_M_allocate(__n);
-          546    0    0          0    0    0        544    0    0     0   0  0   0  	this->_M_impl._M_finish = this->_M_impl._M_start;
-        1,097    1    1          2    0    0        546    0    0     0   0  0   0  	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .      };
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .    /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .     *  @brief A standard container which offers fixed time access to
-            .    .    .          .    .    .          .    .    .     .   .  .   .     *  individual elements in any order.
-            .    .    .          .    .    .          .    .    .     .   .  .   .     *
-            .    .    .          .    .    .          .    .    .     .   .  .   .     *  @ingroup sequences
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .      public:
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _Vector_impl _M_impl;
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        pointer
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_allocate(size_t __n)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+        7,854    3    3          0    0    0         10     0    0 2,101   3  0   0  	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_deallocate(pointer __p, size_t __n)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+        8,429    2    2         12    0    0          0     0    0 4,214  12  0   0  	if (__p)
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  _Tr::deallocate(_M_impl, __p, __n);
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .      private:
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_create_storage(size_t __n)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+        1,100    0    0        554    0    0        546     0    0     0   0  0   0  	this->_M_impl._M_start = this->_M_allocate(__n);
+          546    0    0          0    0    0        544     0    0     0   0  0   0  	this->_M_impl._M_finish = this->_M_impl._M_start;
+        1,097    1    1          2    0    0        546     0    0     0   0  0   0  	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .      };
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .    /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .     *  @brief A standard container which offers fixed time access to
+            .    .    .          .    .    .          .     .    .     .   .  .   .     *  individual elements in any order.
+            .    .    .          .    .    .          .     .    .     .   .  .   .     *
+            .    .    .          .    .    .          .     .    .     .   .  .   .     *  @ingroup sequences
 -- line 321 ----------------------------------------
 -- line 452 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @a __x  will not be copied
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  (i.e. capacity() == size() in the new %vector).
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  The newly-created %vector uses a copy of the allocator object used
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  by @a __x (unless the allocator traits dictate a different object).
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        vector(const vector& __x)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        : _Base(__x.size(),
-           33    0    0         22    0    0         11    0    0     0   0  0   0  	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-          554    0    0         11    0    0        543    0    0     0   0  0   0  	this->_M_impl._M_finish =
-        1,596    0    0      1,064    0    0        532    0    0     0   0  0   0  	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
-            .    .    .          .    .    .          .    .    .     .   .  .   .  				      this->_M_impl._M_start,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  				      _M_get_Tp_allocator());
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #if __cplusplus >= 201103L
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @brief  %Vector move constructor.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @param  __x  A %vector of identical element and allocator types.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @a __x  will not be copied
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  (i.e. capacity() == size() in the new %vector).
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  The newly-created %vector uses a copy of the allocator object used
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  by @a __x (unless the allocator traits dictate a different object).
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        vector(const vector& __x)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        : _Base(__x.size(),
+           33    1    1         22    0    0         11     0    0     0   0  0   0  	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+          554    0    0         11    0    0        543     0    0     0   0  0   0  	this->_M_impl._M_finish =
+        1,596    0    0      1,064    0    0        532     0    0     0   0  0   0  	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+            .    .    .          .    .    .          .     .    .     .   .  .   .  				      this->_M_impl._M_start,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  				      _M_get_Tp_allocator());
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #if __cplusplus >= 201103L
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @brief  %Vector move constructor.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @param  __x  A %vector of identical element and allocator types.
 -- line 471 ----------------------------------------
 -- line 557 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #endif
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  The dtor only erases the elements, and note that if the
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  elements themselves are pointers, the pointed-to memory is
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  not touched in any way.  Managing the pointer is the user's
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  responsibility.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-           10    1    1          0    0    0          8    0    0     0   0  0   0        ~vector() _GLIBCXX_NOEXCEPT
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-        4,227    1    1      4,227  206    0          0    0    0     0   0  0   0  	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  		      _M_get_Tp_allocator());
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
-            8    0    0          8    1    0          0    0    0     0   0  0   0        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @brief  %Vector assignment operator.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @param  __x  A %vector of identical element and allocator types.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  All the elements of @a __x are copied, but any unused capacity in
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @a __x will not be copied.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #endif
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  The dtor only erases the elements, and note that if the
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  elements themselves are pointers, the pointed-to memory is
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  not touched in any way.  Managing the pointer is the user's
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  responsibility.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+           10    2    2          0    0    0          8     0    0     0   0  0   0        ~vector() _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+        4,227    1    1      4,227  206    0          0     0    0     0   0  0   0  	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  		      _M_get_Tp_allocator());
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
+            8    0    0          8    1    0          0     0    0     0   0  0   0        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @brief  %Vector assignment operator.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @param  __x  A %vector of identical element and allocator types.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  All the elements of @a __x are copied, but any unused capacity in
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @a __x will not be copied.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *
 -- line 578 ----------------------------------------
 -- line 797 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .        const_reverse_iterator
-            .    .    .          .    .    .          .    .    .     .   .  .   .        crend() const noexcept
-            .    .    .          .    .    .          .    .    .     .   .  .   .        { return const_reverse_iterator(begin()); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #endif
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // [23.2.4.2] capacity
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**  Returns the number of elements in the %vector.  */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        size_type
-          543    1    1          0    0    0        543    0    0     0   0  0   0        size() const _GLIBCXX_NOEXCEPT
-       27,274    2    2      8,656  297    0      2,592    0    0     0   0  0   0        { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**  Returns the size() of the largest possible %vector.  */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        size_type
-            .    .    .          .    .    .          .    .    .     .   .  .   .        max_size() const _GLIBCXX_NOEXCEPT
-            .    .    .          .    .    .          .    .    .     .   .  .   .        { return _Alloc_traits::max_size(_M_get_Tp_allocator()); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #if __cplusplus >= 201103L
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .        const_reverse_iterator
+            .    .    .          .    .    .          .     .    .     .   .  .   .        crend() const noexcept
+            .    .    .          .    .    .          .     .    .     .   .  .   .        { return const_reverse_iterator(begin()); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #endif
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // [23.2.4.2] capacity
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**  Returns the number of elements in the %vector.  */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        size_type
+          543    0    0          0    0    0        543     0    0     0   0  0   0        size() const _GLIBCXX_NOEXCEPT
+       27,274    1    1      8,656  300    0      2,592     0    0     0   0  0   0        { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**  Returns the size() of the largest possible %vector.  */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        size_type
+            .    .    .          .    .    .          .     .    .     .   .  .   .        max_size() const _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .        { return _Alloc_traits::max_size(_M_get_Tp_allocator()); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #if __cplusplus >= 201103L
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
 -- line 814 ----------------------------------------
 -- line 887 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .  			 - this->_M_impl._M_start); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  Returns true if the %vector is empty.  (Thus begin() would
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  equal end().)
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        bool
-            .    .    .          .    .    .          .    .    .     .   .  .   .        empty() const _GLIBCXX_NOEXCEPT
-          543    0    0        543    0    0          0    0    0     0   0  0   0        { return begin() == end(); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @brief  Attempt to preallocate enough memory for specified number of
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *          elements.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @param  __n  Number of elements required.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @throw  std::length_error  If @a n exceeds @c max_size().
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  This function attempts to reserve enough memory for the
+            .    .    .          .    .    .          .     .    .     .   .  .   .  			 - this->_M_impl._M_start); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  Returns true if the %vector is empty.  (Thus begin() would
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  equal end().)
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        bool
+            .    .    .          .    .    .          .     .    .     .   .  .   .        empty() const _GLIBCXX_NOEXCEPT
+          543    0    0        543    0    0          0     0    0     0   0  0   0        { return begin() == end(); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @brief  Attempt to preallocate enough memory for specified number of
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *          elements.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @param  __n  Number of elements required.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @throw  std::length_error  If @a n exceeds @c max_size().
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  This function attempts to reserve enough memory for the
 -- line 903 ----------------------------------------
 -- line 925 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  Note that data access with this operator is unchecked and
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  out_of_range lookups are not defined. (For checked lookups
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  see at().)
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        reference
-            .    .    .          .    .    .          .    .    .     .   .  .   .        operator[](size_type __n) _GLIBCXX_NOEXCEPT
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	__glibcxx_requires_subscript(__n);
-7,700,576,374    4    4 20,284,497    0    0 28,911,371    0    0     0   0  0   0  	return *(this->_M_impl._M_start + __n);
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /**
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @brief  Subscript access to the data contained in the %vector.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @param __n The index of the element for which data should be
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  accessed.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  @return  Read-only (constant) reference to data.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  Note that data access with this operator is unchecked and
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  out_of_range lookups are not defined. (For checked lookups
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  see at().)
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        reference
+            .    .    .          .    .    .          .     .    .     .   .  .   .        operator[](size_type __n) _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	__glibcxx_requires_subscript(__n);
+7,700,576,374    4    4 20,284,497  116    0 28,911,371 1,198    0     0   0  0   0  	return *(this->_M_impl._M_start + __n);
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /**
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @brief  Subscript access to the data contained in the %vector.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @param __n The index of the element for which data should be
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  accessed.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  @return  Read-only (constant) reference to data.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *
 -- line 941 ----------------------------------------
 -- line 943 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  Note that data access with this operator is unchecked and
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  out_of_range lookups are not defined. (For checked lookups
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  see at().)
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        const_reference
-            .    .    .          .    .    .          .    .    .     .   .  .   .        operator[](size_type __n) const _GLIBCXX_NOEXCEPT
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	__glibcxx_requires_subscript(__n);
-       18,845    1    1      7,773    0    0      2,591    0    0     0   0  0   0  	return *(this->_M_impl._M_start + __n);
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .      protected:
-            .    .    .          .    .    .          .    .    .     .   .  .   .        /// Safety check used only from at().
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_range_check(size_type __n) const
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	if (__n >= this->size())
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  Note that data access with this operator is unchecked and
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  out_of_range lookups are not defined. (For checked lookups
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  see at().)
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        const_reference
+            .    .    .          .    .    .          .     .    .     .   .  .   .        operator[](size_type __n) const _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	__glibcxx_requires_subscript(__n);
+       18,845    1    1      7,773    0    0      2,591     0    0     0   0  0   0  	return *(this->_M_impl._M_start + __n);
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .      protected:
+            .    .    .          .    .    .          .     .    .     .   .  .   .        /// Safety check used only from at().
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_range_check(size_type __n) const
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	if (__n >= this->size())
 -- line 959 ----------------------------------------
 -- line 1068 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  element at the end of the %vector and assigns the given data
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  to it.  Due to the nature of a %vector this operation can be
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  done in constant time if the %vector has preallocated space
-            .    .    .          .    .    .          .    .    .     .   .  .   .         *  available.
-            .    .    .          .    .    .          .    .    .     .   .  .   .         */
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        push_back(const value_type& __x)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-        9,567    1    1      6,378    0    0          0    0    0 3,189 538  0   0  	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  {
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	    _GLIBCXX_ASAN_ANNOTATE_GROW(1);
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  				     __x);
-        1,092    0    0      1,092    0    0          0    0    0     0   0  0   0  	    ++this->_M_impl._M_finish;
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	    _GLIBCXX_ASAN_ANNOTATE_GREW(1);
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	else
-       10,485    2    2         22    0    0      2,097    0    0     0   0  0   0  	  _M_realloc_insert(end(), __x);
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #if __cplusplus >= 201103L
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        push_back(value_type&& __x)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        { emplace_back(std::move(__x)); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        template<typename... _Args>
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  element at the end of the %vector and assigns the given data
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  to it.  Due to the nature of a %vector this operation can be
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  done in constant time if the %vector has preallocated space
+            .    .    .          .    .    .          .     .    .     .   .  .   .         *  available.
+            .    .    .          .    .    .          .     .    .     .   .  .   .         */
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        push_back(const value_type& __x)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+        9,567    1    1      6,378    0    0          0     0    0 3,189 538  0   0  	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  {
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	    _GLIBCXX_ASAN_ANNOTATE_GROW(1);
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  				     __x);
+        1,092    1    1      1,092    0    0          0     0    0     0   0  0   0  	    ++this->_M_impl._M_finish;
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	    _GLIBCXX_ASAN_ANNOTATE_GREW(1);
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	else
+       10,485    3    3         22    0    0      2,097     0    0     0   0  0   0  	  _M_realloc_insert(end(), __x);
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #if __cplusplus >= 201103L
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        push_back(value_type&& __x)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        { emplace_back(std::move(__x)); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        template<typename... _Args>
 -- line 1093 ----------------------------------------
 -- line 1458 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Called by the second initialize_dispatch above
-            .    .    .          .    .    .          .    .    .     .   .  .   .        template<typename _ForwardIterator>
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	void
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  			    std::forward_iterator_tag)
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	{
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  const size_type __n = std::distance(__first, __last);
-            2    0    0          0    0    0          2    0    0     0   0  0   0  	  this->_M_impl._M_start = this->_M_allocate(__n);
-            4    0    0          0    0    0          2    0    0     0   0  0   0  	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-            2    0    0          0    0    0          2    1    0     0   0  0   0  	  this->_M_impl._M_finish =
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	    std::__uninitialized_copy_a(__first, __last,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  					this->_M_impl._M_start,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  					_M_get_Tp_allocator());
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	}
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Called by the first initialize_dispatch above and by the
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // vector(n,value,a) constructor.
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Called by the second initialize_dispatch above
+            .    .    .          .    .    .          .     .    .     .   .  .   .        template<typename _ForwardIterator>
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	void
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  			    std::forward_iterator_tag)
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	{
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  const size_type __n = std::distance(__first, __last);
+            2    0    0          0    0    0          2     0    0     0   0  0   0  	  this->_M_impl._M_start = this->_M_allocate(__n);
+            4    0    0          0    0    0          2     0    0     0   0  0   0  	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+            2    0    0          0    0    0          2     1    0     0   0  0   0  	  this->_M_impl._M_finish =
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	    std::__uninitialized_copy_a(__first, __last,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  					this->_M_impl._M_start,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  					_M_get_Tp_allocator());
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	}
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Called by the first initialize_dispatch above and by the
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // vector(n,value,a) constructor.
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
 -- line 1476 ----------------------------------------
 -- line 1479 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	this->_M_impl._M_finish =
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  					_M_get_Tp_allocator());
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #if __cplusplus >= 201103L
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Called by the vector(n) constructor.
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            4    1    1          2    0    0          1    0    0     0   0  0   0        _M_default_initialize(size_type __n)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-            3    1    1          0    0    0          3    1    0     0   0  0   0  	this->_M_impl._M_finish =
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  std::__uninitialized_default_n_a(this->_M_impl._M_start, __n,
-            .    .    .          .    .    .          .    .    .     .   .  .   .  					   _M_get_Tp_allocator());
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #endif
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Internal assign functions follow.  The *_aux functions do the actual
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // assignment work for the range versions.
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	this->_M_impl._M_finish =
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  					_M_get_Tp_allocator());
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #if __cplusplus >= 201103L
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Called by the vector(n) constructor.
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            4    0    0          2    0    0          1     0    0     0   0  0   0        _M_default_initialize(size_type __n)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+            3    0    0          0    0    0          3     1    0     0   0  0   0  	this->_M_impl._M_finish =
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  std::__uninitialized_default_n_a(this->_M_impl._M_start, __n,
+            .    .    .          .    .    .          .     .    .     .   .  .   .  					   _M_get_Tp_allocator());
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #endif
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Internal assign functions follow.  The *_aux functions do the actual
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // assignment work for the range versions.
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
 -- line 1497 ----------------------------------------
 -- line 1634 ----------------------------------------
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_emplace_aux(const_iterator __position, value_type&& __v)
-            .    .    .          .    .    .          .    .    .     .   .  .   .        { return _M_insert_rval(__position, std::move(__v)); }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  #endif
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Called by _M_fill_insert, _M_insert_aux etc.
-            .    .    .          .    .    .          .    .    .     .   .  .   .        size_type
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_check_len(size_type __n, const char* __s) const
-            .    .    .          .    .    .          .    .    .     .   .  .   .        {
-        4,205    0    0      4,194    0    0         11    0    0     0   0  0   0  	if (max_size() - size() < __n)
-            .    .    .          .    .    .          .    .    .     .   .  .   .  	  __throw_length_error(__N(__s));
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-        7,876    2    2      2,097    0    0      2,108    0    0     0   0  0   0  	const size_type __len = size() + std::max(size(), __n);
-        7,760    1    1          0    0    0          0    0    0 3,104   7  0   0  	return (__len < size() || __len > max_size()) ? max_size() : __len;
-            .    .    .          .    .    .          .    .    .     .   .  .   .        }
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Internal erase functions follow.
-            .    .    .          .    .    .          .    .    .     .   .  .   .  
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // Called by erase(q1,q2), clear(), resize(), _M_fill_assign,
-            .    .    .          .    .    .          .    .    .     .   .  .   .        // _M_assign_aux.
-            .    .    .          .    .    .          .    .    .     .   .  .   .        void
-            .    .    .          .    .    .          .    .    .     .   .  .   .        _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_emplace_aux(const_iterator __position, value_type&& __v)
+            .    .    .          .    .    .          .     .    .     .   .  .   .        { return _M_insert_rval(__position, std::move(__v)); }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  #endif
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Called by _M_fill_insert, _M_insert_aux etc.
+            .    .    .          .    .    .          .     .    .     .   .  .   .        size_type
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_check_len(size_type __n, const char* __s) const
+            .    .    .          .    .    .          .     .    .     .   .  .   .        {
+        4,205    0    0      4,194    0    0         11     0    0     0   0  0   0  	if (max_size() - size() < __n)
+            .    .    .          .    .    .          .     .    .     .   .  .   .  	  __throw_length_error(__N(__s));
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+        7,876    2    2      2,097    0    0      2,108     0    0     0   0  0   0  	const size_type __len = size() + std::max(size(), __n);
+        7,760    1    1          0    0    0          0     0    0 3,104   8  0   0  	return (__len < size() || __len > max_size()) ? max_size() : __len;
+            .    .    .          .    .    .          .     .    .     .   .  .   .        }
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Internal erase functions follow.
+            .    .    .          .    .    .          .     .    .     .   .  .   .  
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // Called by erase(q1,q2), clear(), resize(), _M_fill_assign,
+            .    .    .          .    .    .          .     .    .     .   .  .   .        // _M_assign_aux.
+            .    .    .          .    .    .          .     .    .     .   .  .   .        void
+            .    .    .          .    .    .          .     .    .     .   .  .   .        _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT
 -- line 1654 ----------------------------------------
 
 --------------------------------------------------------------------------------
@@ -324,7 +324,7 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .    Graph(const vector<Header>& header, const vector<Node>& nodes, const vector<string>& names)
             .    .    .             .      .    .           .      .    .             .           .  .   .        : last_header(begin(header), end(header)),
             .    .    .             .      .    .           .      .    .             .           .  .   .          last_nodes(begin(nodes), end(nodes)),
-            2    0    0             0      0    0           2      1    0             0           0  0   0          names(names), frame(0) {
+            2    0    0             0      0    0           2      0    0             0           0  0   0          names(names), frame(0) {
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    void graph(const vector<Header>& header, const vector<Node>& nodes) {
@@ -343,14 +343,14 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .    int frame;
             .    .    .             .      .    .           .      .    .             .           .  .   .  };
             .    .    .             .      .    .           .      .    .             .           .  .   .  
-            3    1    1             1      0    0           1      0    0             0           0  0   0  class ExactCover {
+            3    0    0             1      0    0           1      0    0             0           0  0   0  class ExactCover {
             .    .    .             .      .    .           .      .    .             .           .  .   .   public:
            14    2    2             1      0    0           7      0    0             0           0  0   0    ExactCover(
             .    .    .             .      .    .           .      .    .             .           .  .   .        const vector<string>& items,
             .    .    .             .      .    .           .      .    .             .           .  .   .        const vector<vector<string>>& options)
             .    .    .             .      .    .           .      .    .             .           .  .   .        : header(build_header(items)), nodes(build_nodes(items, options)),
-            1    0    0             0      0    0           1      0    0             0           0  0   0          names(items), solution(options.size()), graph(header, nodes, items) {
-           11    1    1             9      3    0           0      0    0             1           0  0   0    }
+            1    0    0             0      0    0           1      1    0             0           0  0   0          names(items), solution(options.size()), graph(header, nodes, items) {
+           11    0    0             9      3    0           0      0    0             1           0  0   0    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    void print() {
             .    .    .             .      .    .           .      .    .             .           .  .   .      cout << "nodes " << nodes.size() << "\n";
@@ -368,36 +368,37 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .      graph.graph(header, nodes);
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
-            .    .    .             .      .    .           .      .    .             .           .  .   .    int run() {
-            3    0    0             0      0    0           1      0    0             0           0  0   0      return solve(0);
+            .    .    .             .      .    .           .      .    .             .           .  .   .    long run() {
+            1    1    1             0      0    0           1      0    0             0           0  0   0      count = 0;
+            3    0    0             0      0    0           1      0    0             0           0  0   0      solve(0);
+            .    .    .             .      .    .           .      .    .             .           .  .   .      return count;
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .   private:
-  228,345,677    1    0             0      0    0 195,724,866  6,551    0             0           0  0   0    int solve(int level) {
-  130,483,244    0    0    65,241,622      4    0           0      0    0    32,620,811   2,048,385  0   0      if (header[0].rlink == 0) {
-   32,620,811    0    0             0      0    0           0      0    0             0           0  0   0        return 1;
+  228,345,677    1    0             0      0    0 195,724,866  7,544    0             0           0  0   0    void solve(int level) {
+  130,483,244    1    1    65,241,622      4    0           0      0    0    32,620,811   2,848,583  0   0      if (header[0].rlink == 0) {
+    3,709,440    0    0     3,709,440    441    0           0      0    0             0           0  0   0        count++;
+            .    .    .             .      .    .           .      .    .             .           .  .   .        return;
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
-1,646,478,769    0    0             0      0    0  20,279,315      0    0             0           0  0   0      int count = 0;
             .    .    .             .      .    .           .      .    .             .           .  .   .      int item = best_item();
             .    .    .             .      .    .           .      .    .             .           .  .   .      cover(item);
-   66,454,798    0    0     8,632,056      0    0  28,911,371    277    0             0           0  0   0      solution[level] = nodes[item].dlink;
-  427,429,381    1    1   126,079,565    172    0  52,900,125  3,339    0    52,900,125   7,519,249  0   0      for (auto& option = solution[level]; option != item; option = nodes[option].dlink) {
+   66,454,798    0    0     8,632,056      0    0  28,911,371    298    0             0           0  0   0      solution[level] = nodes[item].dlink;
+  427,429,381    1    1   126,079,565    127    0  52,900,125      0    0    52,900,125   7,519,249  0   0      for (auto& option = solution[level]; option != item; option = nodes[option].dlink) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        try_option(option);
-  130,483,240    1    1    32,620,810    429    0  32,620,810      0    0             0           0  0   0        count += solve(level + 1);
+   97,862,430    1    1             0      0    0  32,620,810  1,927    0             0           0  0   0        solve(level + 1);
    32,620,810    0    0    32,620,810    175    0           0      0    0             0           0  0   0        rewind_option(option);
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
             .    .    .             .      .    .           .      .    .             .           .  .   .      uncover(item);
-            .    .    .             .      .    .           .      .    .             .           .  .   .      return count;
-  293,587,299    0    0   228,345,677    157    0           0      0    0             0           0  0   0    }
+  282,487,504    1    1   233,725,931    192    0   5,380,254      0    0             0           0  0   0    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    int best_item() {
             .    .    .             .      .    .           .      .    .             .           .  .   .      int best = header[0].rlink;
-   86,734,113    1    1    57,822,742      6    0           0      0    0             0           0  0   0      int value = nodes[best].top;
-1,171,085,685    1    1   312,994,243    378    0  22,523,117      0    0   290,471,126  24,256,351  0   0      for (int p = header[best].rlink; p != 0; p = header[p].rlink) {
-1,067,760,036    0    0   266,940,009     18    0           0      0    0   266,940,009  21,339,110  0   0        if (nodes[p].top < value) {
+   86,734,113    0    0    57,822,742      5    0           0      0    0             0           0  0   0      int value = nodes[best].top;
+2,748,094,453    1    1   312,994,243    377    0  22,523,117      0    0   290,471,126  26,009,648  0   0      for (int p = header[best].rlink; p != 0; p = header[p].rlink) {
+1,067,760,036    0    0   266,940,009     22    0           0      0    0   266,940,009  21,339,110  0   0        if (nodes[p].top < value) {
             .    .    .             .      .    .           .      .    .             .           .  .   .          best = p;
             .    .    .             .      .    .           .      .    .             .           .  .   .          value = nodes[p].top;
-   94,189,168    0    0             0      0    0           0      0    0    23,547,292   2,691,173  0   0          if (value == 0) {
+   94,189,168    1    1             0      0    0           0      0    0    23,547,292   2,691,174  0   0          if (value == 0) {
             .    .    .             .      .    .           .      .    .             .           .  .   .            break;
             .    .    .             .      .    .           .      .    .             .           .  .   .          }
             .    .    .             .      .    .           .      .    .             .           .  .   .        }
@@ -407,8 +408,8 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    template<typename T>
             .    .    .             .      .    .           .      .    .             .           .  .   .    void option_right(int option, T action) {
-2,889,967,088    0    0             0      0    0           0      0    0 1,161,527,964 148,576,397  0   0      for (auto p = option + 1; p != option;) {
-5,685,451,010    1    1 2,200,867,118 11,511    0           0      0    0 1,161,527,964 144,783,501  0   0        if (nodes[p].top <= 0) {
+2,889,967,088    0    0             0      0    0           0      0    0 1,161,527,964 148,420,779  0   0      for (auto p = option + 1; p != option;) {
+5,685,451,010    1    1 2,200,867,118 10,929    0           0      0    0 1,161,527,964 144,783,496  0   0        if (nodes[p].top <= 0) {
    32,620,810    0    0    32,620,810      0    0           0      0    0             0           0  0   0          p = nodes[p].ulink;
             .    .    .             .      .    .           .      .    .             .           .  .   .        } else {
             .    .    .             .      .    .           .      .    .             .           .  .   .          action(p);
@@ -418,9 +419,9 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    template<typename T>
-            .    .    .             .      .    .           .      .    .             .           .  .   .    void option_left(int option, T action) {
-2,922,587,898    1    1    32,620,810      0    0           0      0    0 1,161,527,964 135,783,901  0   0      for (auto p = option - 1; p != option;) {
-5,685,451,010    2    2 2,200,867,118 22,678    0           0      0    0 1,161,527,964  97,603,568  0   0        if (nodes[p].top <= 0) {
+   32,620,810    0    0    32,620,810      0    0           0      0    0             0           0  0   0    void option_left(int option, T action) {
+2,889,967,088    1    1             0      0    0           0      0    0 1,161,527,964 136,561,737  0   0      for (auto p = option - 1; p != option;) {
+5,685,451,010    1    1 2,200,867,118 23,610    0           0      0    0 1,161,527,964  85,882,376  0   0        if (nodes[p].top <= 0) {
    32,620,810    0    0    32,620,810      1    0           0      0    0             0           0  0   0          p = nodes[p].dlink;
             .    .    .             .      .    .           .      .    .             .           .  .   .        } else {
             .    .    .             .      .    .           .      .    .             .           .  .   .          action(p);
@@ -433,8 +434,8 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .      option_right(option, [&](int p) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        cover(nodes[p].top);
             .    .    .             .      .    .           .      .    .             .           .  .   .      });
--- line 188 ----------------------------------------
--- line 190 ----------------------------------------
+-- line 189 ----------------------------------------
+-- line 191 ----------------------------------------
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    void rewind_option(int option) {
             .    .    .             .      .    .           .      .    .             .           .  .   .      option_left(option, [&](int p) {
@@ -443,21 +444,21 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    void cover(int i) {
-1,379,869,178    1    1   369,314,141     84    0           0      0    0   369,314,141  48,046,974  0   0      for (auto p = nodes[i].dlink; p != i; p = nodes[p].dlink) {
+1,379,869,178    1    1   369,314,141     85    0           0      0    0   369,314,141  47,845,506  0   0      for (auto p = nodes[i].dlink; p != i; p = nodes[p].dlink) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        hide(p);
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
-  228,326,686    1    1   228,326,686    103    0           0      0    0             0           0  0   0      auto l = header[i].llink;
+  228,326,686    0    0   228,326,686    104    0           0      0    0             0           0  0   0      auto l = header[i].llink;
    89,568,000    0    0    89,568,000      0    0           0      0    0             0           0  0   0      auto r = header[i].rlink;
   118,479,371    0    0             0      0    0 118,479,371     17    0             0           0  0   0      header[l].rlink = r;
   118,479,371    0    0             0      0    0 118,479,371     24    0             0           0  0   0      header[r].llink = l;
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
             .    .    .             .      .    .           .      .    .             .           .  .   .    void uncover(int i) {
-  179,136,000    0    0    89,568,000      0    0           0      0    0             0           0  0   0      auto l = header[i].llink;
+  179,136,000    0    0    89,568,000      1    0           0      0    0             0           0  0   0      auto l = header[i].llink;
   118,479,371    1    1   118,479,371     43    0           0      0    0             0           0  0   0      auto r = header[i].rlink;
   236,958,742    0    0   118,479,371      0    0 118,479,371      2    0             0           0  0   0      header[l].rlink = i;
-  118,479,371    0    0             0      0    0 118,479,371      1    0             0           0  0   0      header[r].llink = i;
-1,477,804,029    1    1   374,694,395    146    0   5,380,254      0    0   369,314,141  65,793,855  0   0      for (auto p = nodes[i].ulink; p != i; p = nodes[p].ulink) {
+  208,047,371    0    0             0      0    0 118,479,371      1    0             0           0  0   0      header[r].llink = i;
+1,436,003,698    0    0   369,314,141    146    0           0      0    0   369,314,141  65,794,859  0   0      for (auto p = nodes[i].ulink; p != i; p = nodes[p].ulink) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        unhide(p);
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
@@ -467,8 +468,8 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .        auto x = nodes[q].top;
             .    .    .             .      .    .           .      .    .             .           .  .   .        auto u = nodes[q].ulink;
   788,504,384    0    0   788,504,384    316    0           0      0    0             0           0  0   0        auto d = nodes[q].dlink;
-2,365,513,152    1    1             0      0    0 788,504,384  4,365    0             0           0  0   0        nodes[u].dlink = d;
-1,577,008,768    0    0             0      0    0 788,504,384 10,979    0             0           0  0   0        nodes[d].ulink = u;
+2,365,513,152    1    1             0      0    0 788,504,384  4,329    0             0           0  0   0        nodes[u].dlink = d;
+1,577,008,768    0    0             0      0    0 788,504,384 10,648    0             0           0  0   0        nodes[d].ulink = u;
 1,577,008,768    0    0   788,504,384     25    0           0      0    0             0           0  0   0        nodes[x].top--;
             .    .    .             .      .    .           .      .    .             .           .  .   .      });
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
@@ -478,9 +479,9 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .        auto x = nodes[q].top;
             .    .    .             .      .    .           .      .    .             .           .  .   .        auto u = nodes[q].ulink;
             .    .    .             .      .    .           .      .    .             .           .  .   .        auto d = nodes[q].dlink;
-2,365,513,152    0    0   788,504,384      0    0 788,504,384  2,880    0             0           0  0   0        nodes[u].dlink = q;
-1,577,008,768    0    0             0      0    0 788,504,384    975    0             0           0  0   0        nodes[d].ulink = q;
-1,577,008,768    0    0   788,504,384     59    0           0      0    0             0           0  0   0        nodes[x].top++;
+2,365,513,152    0    0   788,504,384      0    0 788,504,384  2,893    0             0           0  0   0        nodes[u].dlink = q;
+1,577,008,768    0    0             0      0    0 788,504,384    973    0             0           0  0   0        nodes[d].ulink = q;
+1,577,008,768    0    0   788,504,384     65    0           0      0    0             0           0  0   0        nodes[x].top++;
             .    .    .             .      .    .           .      .    .             .           .  .   .      });
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
@@ -489,8 +490,8 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .      for (int t = 0; header[t].rlink != 0;) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        t = header[t].rlink;
             .    .    .             .      .    .           .      .    .             .           .  .   .        cout << names[t] << " ";
--- line 243 ----------------------------------------
--- line 267 ----------------------------------------
+-- line 244 ----------------------------------------
+-- line 268 ----------------------------------------
             .    .    .             .      .    .           .      .    .             .           .  .   .      for (p = p + 1; nodes[p].top > 0; p++) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        cout << names[nodes[p].top] << " ";
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
@@ -500,8 +501,8 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .        const vector<string>& items,
             .    .    .             .      .    .           .      .    .             .           .  .   .        const vector<vector<string>>& options) {
             1    0    0             0      0    0           0      0    0             0           0  0   0      int total_nodes = 2 + items.size();
-        1,091    0    0             2      0    0           0      0    0           544          10  0   0      for (const auto& option : options) {
-          543    1    1             0      0    0           0      0    0             0           0  0   0        total_nodes += 1 + option.size();
+        1,091    0    0             2      0    0           0      0    0           544           8  0   0      for (const auto& option : options) {
+          543    0    0             0      0    0           0      0    0             0           0  0   0        total_nodes += 1 + option.size();
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
             .    .    .             .      .    .           .      .    .             .           .  .   .      return total_nodes;
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
@@ -510,11 +511,11 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .        const vector<string>& items) {
             1    0    0             1      0    0           0      0    0             0           0  0   0      vector<Header> header(items.size() + 1);
             1    0    0             0      0    0           0      0    0             0           0  0   0      int size = items.size();
-          175    0    0             0      0    0           0      0    0            57           2  0   0      for (int i = 0; i <= size; i++) {
-          168    0    0             0      0    0           0      0    0            56           5  0   0        if (i == 0) {
-            3    1    1             0      0    0           2      0    0             0           0  0   0          header[i] = { size, 1 };
+          175    1    1             0      0    0           0      0    0            57           2  0   0      for (int i = 0; i <= size; i++) {
+          168    0    0             0      0    0           0      0    0            56           6  0   0        if (i == 0) {
+            3    0    0             0      0    0           2      0    0             0           0  0   0          header[i] = { size, 1 };
             .    .    .             .      .    .           .      .    .             .           .  .   .        } else {
-          332    0    0             0      0    0         110      0    0             0           0  0   0          header[i] = { i - 1, (i + 1) % (size + 1) };
+          332    1    1             0      0    0         110      0    0             0           0  0   0          header[i] = { i - 1, (i + 1) % (size + 1) };
             .    .    .             .      .    .           .      .    .             .           .  .   .        }
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
             .    .    .             .      .    .           .      .    .             .           .  .   .      return header;
@@ -526,26 +527,26 @@ Auto-annotation:  on
             1    0    0             0      0    0           0      0    0             0           0  0   0      vector<Node> nodes(count_nodes(items, options));
             .    .    .             .      .    .           .      .    .             .           .  .   .      vector<int> last(items.size() + 1);
             .    .    .             .      .    .           .      .    .             .           .  .   .      unordered_map<string, int> name;
-          169    1    1            55      0    0           0      0    0            56           9  0   0      for (int i = 1; i <= int(items.size()); i++) {
-          165    1    1             0      0    0         165     11    0             0           0  0   0        nodes[i] = {0, i, i};
+          169    0    0            55      0    0           0      0    0            56           6  0   0      for (int i = 1; i <= int(items.size()); i++) {
+          165    0    0             0      0    0         165     11    0             0           0  0   0        nodes[i] = {0, i, i};
           110    0    0            55      0    0          55      0    0             0           0  0   0        last[i] = i;
            55    0    0             0      0    0          55      0    0             0           0  0   0        name[items[i - 1]] = i;
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
-            2    0    0             0      0    0           1      0    0             0           0  0   0      int current = items.size() + 1;
+            2    1    1             0      0    0           1      0    0             0           0  0   0      int current = items.size() + 1;
             2    0    0             0      0    0           0      0    0             0           0  0   0      int lastspacer = -2;
             .    .    .             .      .    .           .      .    .             .           .  .   .      int spacer = current;
-        3,315    1    1             2      0    0         543      0    0           544           1  0   0      for (int i = 0; i < int(options.size()); i++) {
+        3,315    0    0             2      0    0         543      0    0           544           1  0   0      for (int i = 0; i < int(options.size()); i++) {
             .    .    .             .      .    .           .      .    .             .           .  .   .        spacer = current;
-        2,715    0    0           543      0    0         543     68    0             0           0  0   0        nodes[spacer].top = -i;
+        2,715    1    1           543      0    0         543     68    0             0           0  0   0        nodes[spacer].top = -i;
         2,172    0    0             0      0    0         543      0    0             0           0  0   0        nodes[spacer].ulink = lastspacer + 1;
         1,086    0    0             0      0    0         543     68    0             0           0  0   0        nodes[spacer].dlink = spacer + options[i].size();
             .    .    .             .      .    .           .      .    .             .           .  .   .        lastspacer = spacer;
         1,086    0    0             0      0    0         543      0    0             0           0  0   0        current++;
-       14,165    1    1         5,725      0    0       1,086      0    0         3,134         515  0   0        for (int j = 0; j < int(options[i].size()); j++) {
+       14,165    0    0         5,725      0    0       1,086      0    0         3,134         513  0   0        for (int j = 0; j < int(options[i].size()); j++) {
         5,182    0    0         2,591      0    0           0      0    0             0           0  0   0          int item = name[options[i][j]];
         5,182    0    0         5,182      0    0           0      0    0             0           0  0   0          nodes[item].top++;
         7,773    0    0         2,591      0    0       2,591      0    0             0           0  0   0          nodes[last[item]].dlink = current;
-        2,591    0    0             0      0    0       2,591      0    0             0           0  0   0          nodes[item].ulink = current;
+        2,591    1    1             0      0    0       2,591      0    0             0           0  0   0          nodes[item].ulink = current;
         2,591    0    0             0      0    0       2,591    128    0             0           0  0   0          nodes[current].top = item;
        10,364    0    0         5,182      0    0       2,591      0    0             0           0  0   0          nodes[current].ulink = last[item];
         2,591    0    0             0      0    0       2,591    324    0             0           0  0   0          nodes[current].dlink = item;
@@ -553,9 +554,9 @@ Auto-annotation:  on
         2,591    0    0             0      0    0           0      0    0             0           0  0   0          current++;
             .    .    .             .      .    .           .      .    .             .           .  .   .        }
             .    .    .             .      .    .           .      .    .             .           .  .   .      }
-            3    0    0             0      0    0           1      0    0             0           0  0   0      nodes[current].top = -int(options.size());
+            3    1    1             0      0    0           1      0    0             0           0  0   0      nodes[current].top = -int(options.size());
             2    0    0             1      0    0           1      0    0             0           0  0   0      nodes[current].ulink = lastspacer + 1;
-            1    1    1             0      0    0           1      0    0             0           0  0   0      nodes[current].dlink = -1;
+            1    0    0             0      0    0           1      0    0             0           0  0   0      nodes[current].dlink = -1;
             .    .    .             .      .    .           .      .    .             .           .  .   .      return nodes;
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
@@ -564,22 +565,23 @@ Auto-annotation:  on
             .    .    .             .      .    .           .      .    .             .           .  .   .    const vector<string>& names;
             .    .    .             .      .    .           .      .    .             .           .  .   .    vector<int> solution;
             .    .    .             .      .    .           .      .    .             .           .  .   .    Graph graph;
+            .    .    .             .      .    .           .      .    .             .           .  .   .    long count;
             .    .    .             .      .    .           .      .    .             .           .  .   .  };
             .    .    .             .      .    .           .      .    .             .           .  .   .  
         6,528    2    2           544      0    0       3,808      0    0             0           0  0   0  vector<string> parse_line(const string& line) {
             .    .    .             .      .    .           .      .    .             .           .  .   .    istringstream iss(line);
             .    .    .             .      .    .           .      .    .             .           .  .   .    vector<string> items;
             .    .    .             .      .    .           .      .    .             .           .  .   .    string item;
-       19,140    2    2         6,380      0    0       3,190      0    0         3,190           6  0   0    while (iss >> item) {
+       19,140    0    0         6,380      0    0       3,190      0    0         3,190           8  0   0    while (iss >> item) {
             .    .    .             .      .    .           .      .    .             .           .  .   .      items.push_back(item);
             .    .    .             .      .    .           .      .    .             .           .  .   .    }
             .    .    .             .      .    .           .      .    .             .           .  .   .    return items;
-        6,528    0    0         4,896      0    0           0      0    0           544           2  0   0  }
+        6,528    0    0         4,896      0    0           0      0    0           544           1  0   0  }
             .    .    .             .      .    .           .      .    .             .           .  .   .  
            10    2    2             1      0    0           7      0    0             0           0  0   0  int main() {
             .    .    .             .      .    .           .      .    .             .           .  .   .    string line;
             .    .    .             .      .    .           .      .    .             .           .  .   .    getline(cin, line);
-            6    1    1             0      0    0           3      0    0             0           0  0   0    vector<string> items = parse_line(line);
+            6    2    2             0      0    0           3      0    0             0           0  0   0    vector<string> items = parse_line(line);
             2    0    0             0      0    0           1      0    0             0           0  0   0    vector<vector<string>> options;
         1,632    0    0         1,088      0    0           0      0    0           544           1  0   0    while (getline(cin, line)) {
         1,632    0    0           543      0    0         544      0    0             0           0  0   0      vector<string> option = parse_line(line);
@@ -590,9 +592,9 @@ Auto-annotation:  on
             9    1    1             2      0    0           2      0    0             0           0  0   0    ExactCover ec(items, options);
             .    .    .             .      .    .           .      .    .             .           .  .   .    //ec.print();
             .    .    .             .      .    .           .      .    .             .           .  .   .    //ec.write_dot();
-            6    1    1             0      0    0           2      0    0             0           0  0   0    cout << "Number of solutions: " << ec.run() << "\n";
+            3    0    0             0      0    0           1      0    0             0           0  0   0    cout << "Number of solutions: " << ec.run() << "\n";
             .    .    .             .      .    .           .      .    .             .           .  .   .    return 0;
-           14    1    1             9      1    0           0      0    0             1           0  0   0  }
+           14    0    0             9      2    0           0      0    0             1           1  0   0  }
 
 --------------------------------------------------------------------------------
  Ir I1mr ILmr  Dr D1mr DLmr  Dw D1mw DLmw  Bc Bcm Bi Bim 
