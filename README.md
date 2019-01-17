@@ -30,7 +30,7 @@ Variation | Time | L1 read misses | LL cache misses | Branch mispredictions
 --- | --- | --- | --- | ---
 `cover_original` | 258s | 114M | 2.13M | 3.11G
 `cover_mrv` | 176s | 112M |  1.02M | 1.33G
-`cover_refactor` | 183s | 151M | 3.89M | 771M
+`cover_refactor` | 169s | 157M | 6.09M | 771M
 `cover_nospacer` | 163s | 72.3M | 1.03M | 597M
 `cover_shortcut` | 163s | 73.2M | 931k | 570M
 

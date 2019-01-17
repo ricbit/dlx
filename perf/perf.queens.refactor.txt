@@ -4,18 +4,18 @@ Number of solutions: 127733760
 
  Performance counter stats for './script.sh' (3 runs):
 
-     182879.726734      task-clock (msec)         #    1.000 CPUs utilized            ( +-  1.41% )
-               224      context-switches          #    0.001 K/sec                    ( +- 75.22% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-             1,162      page-faults               #    0.006 K/sec                    ( +-  0.05% )
-   561,871,641,720      cycles                    #    3.072 GHz                      ( +-  0.56% )  (50.00%)
- 1,710,062,097,021      instructions              #    3.04  insn per cycle           ( +-  0.00% )  (62.50%)
-   240,763,940,880      branches                  # 1316.515 M/sec                    ( +-  0.01% )  (62.50%)
-       770,862,664      branch-misses             #    0.32% of all branches          ( +-  0.19% )  (62.50%)
-   362,648,910,332      L1-dcache-loads           # 1982.991 M/sec                    ( +-  0.00% )  (62.50%)
-       151,255,130      L1-dcache-load-misses     #    0.04% of all L1-dcache hits    ( +-  4.31% )  (62.50%)
-         7,881,381      LLC-loads                 #    0.043 M/sec                    ( +- 19.15% )  (50.00%)
-         3,895,032      LLC-load-misses           #   49.42% of all LL-cache hits     ( +- 17.55% )  (50.00%)
+     168759.229357      task-clock (msec)         #    1.000 CPUs utilized            ( +-  2.27% )
+             2,175      context-switches          #    0.013 K/sec                    ( +- 16.87% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 50.00% )
+             1,162      page-faults               #    0.007 K/sec                    ( +-  0.16% )
+   565,481,938,332      cycles                    #    3.351 GHz                      ( +-  0.33% )  (49.99%)
+ 1,710,168,956,965      instructions              #    3.02  insn per cycle           ( +-  0.01% )  (62.50%)
+   240,777,653,663      branches                  # 1426.753 M/sec                    ( +-  0.00% )  (62.50%)
+       771,290,757      branch-misses             #    0.32% of all branches          ( +-  0.13% )  (62.51%)
+   362,609,711,726      L1-dcache-loads           # 2148.681 M/sec                    ( +-  0.01% )  (62.51%)
+       156,889,807      L1-dcache-load-misses     #    0.04% of all L1-dcache hits    ( +-  2.78% )  (62.50%)
+        10,453,950      LLC-loads                 #    0.062 M/sec                    ( +-  1.94% )  (49.99%)
+         6,086,658      LLC-load-misses           #   58.22% of all LL-cache hits     ( +-  6.01% )  (49.99%)
 
-            182.88 +- 2.58 seconds time elapsed  ( +-  1.41% )
+            168.79 +- 3.84 seconds time elapsed  ( +-  2.27% )
 
